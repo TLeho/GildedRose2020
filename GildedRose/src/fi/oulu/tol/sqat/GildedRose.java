@@ -3,10 +3,9 @@ package fi.oulu.tol.sqat;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class GildedRose {
 
-	private static List<Item> items = null;
+	public static List<Item> items = null;
 
 	/**
 	 * @param args
@@ -21,15 +20,15 @@ public class GildedRose {
         items.add(new Item("Elixir of the Mongoose", 5, 7));
         items.add(new Item("Sulfuras, Hand of Ragnaros", 0, 80));
         items.add(new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20));
-        items.add(new Item("Conjured Mana Cake", 3, 6));
+        items.add(new Item("Conjured Mana Cake", 3, 6));        
 
         updateQuality();
 }
 
-
 	
     public static void updateQuality()
     {
+    	
         for (int i = 0; i < items.size(); i++)
         {
             if ((!"Aged Brie".equals(items.get(i).getName())) && !"Backstage passes to a TAFKAL80ETC concert".equals(items.get(i).getName())) 
@@ -104,22 +103,4 @@ public class GildedRose {
         }
     }
 
-    //constructor
-    public GildedRose() {
-    	items = new ArrayList<Item>();
-    }
-    
-    //getter
-    public List<Item> getItems() {
-    	return items;
-    }
-    //setter
-    public void setItem(Item item) {
-    	items.add(item);
-    }
-    
-    //update one day
-    public void oneDay() {
-    	updateQuality();
-    }
 }
